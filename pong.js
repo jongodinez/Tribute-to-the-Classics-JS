@@ -3,7 +3,7 @@ const ctx = cvs.getContext("2d");
 
 //Create the paddles
 const user = {
-    x : 0
+    x : 0,
     y : cvs.height/2 - 100/2,
     width : 10,
     height : 100,
@@ -23,7 +23,7 @@ const com = {
 
 //Drawing the ball
 const ball = {
-    x : cvs.width/2.
+    x : cvs.width/2,
     y : cvs.height/2,
     radius : 10,
     speed : 5,
