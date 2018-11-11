@@ -74,7 +74,6 @@ drawText = (text, x, y, color) => {
 };
 drawText("something", 300, 200, "white");
 
-
 /////////////////////////////////////
 
 //Detect ball collission
@@ -100,7 +99,49 @@ update =() => {
     if (ball.y + ball.radius > cvs.height || ball.y - ball.radius < 0){
         ball.velocityY = -ball.velocityY;
     }
+
+    //when the paddle hits the ball
+    let player = (ball.x < cvs.width/2) ? user : com;
+    if(collision(ball, player)){
+        let collidePoint = (ball.y - (player.y+player.height/2));
+        collidePoint = collidePoint/(player.height/2);
+        let angleRad = (Math.PI/4)*collidePoint;
+        let direction = (ball.x < cvs.width/2) ? 1 : -1;
+        ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+        ball.velocityY = ball.speed * Math.sin(angleRad);
+        ball.speed += 0.1;
+    }
+
+    //Controlling the paddles
+    //user controls
+    movePaddle = (evt) => {
+        let rect = cvs.getBoundingClientRect();
+        user.y = evt.clientY - rect.top - user.height/2;
+    }
+    cvs.addEventListener("mousemove", movePaddle);
+
+
+    //computer AI to control paddles
+    let computerLevel = 0.01;
+    com.y += (ball.y - (com.y + com.height/2)) * computerLevel;
+
+    resetBall = () => {
+        ball.x = cvs.height/2;
+        ball.y = cvs.width/2;
+        ball.speed = 5;
+        ball.velocityX = -ball.velocityX;
+    }
+
+    //updating the score
+    if (ball.x - ball.radius < 0) {
+        com.score++;
+        resetBall();
+    }else if(ball.x + ball.radius > cvs.width){
+        user.score++;
+        resetBall();
+    }
 }
+
 
 //Render pong.js
 renderPong = () => {
