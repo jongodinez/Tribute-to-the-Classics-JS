@@ -74,6 +74,19 @@ drawText = (text, x, y, color) => {
 };
 drawText("something", 300, 200, "white");
 
+
+/////////////////////////////////////
+
+//function update controls position, movement and score
+update =() => {
+    ball.x += ball.velocityX,
+    ball.y += ball.velocityY
+
+    if (ball.y + ball.r > cvs.height || ball.y - ball.r < 0){
+        ball.welocityY = -ball.velocityY;
+    }
+}
+
 //Render pong.js
 renderPong = () => {
     //Clears the canvas
@@ -91,7 +104,7 @@ renderPong = () => {
 }   
 
 //Initialize game()
-game = () => { renderPong() };
+game = () => { renderPong(), update() };
 
 //Loop
 const framePerSecond = 50;
