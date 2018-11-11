@@ -41,7 +41,7 @@ drawRect = (x, y, w, h, color) => {
 
 //Drawing the net
 const net = {
-    x : cvs.width - 1,
+    x : cvs.width/2 - 1,
     y : 0, 
     width : 2,
     height : 10,
@@ -50,7 +50,7 @@ const net = {
 
 drawNet =() => {
     for(let i = 0; i <= cvs.height; i+=15){
-        drawRect(net.x, net.y, net.width, net.height, net.color)
+        drawRect(net.x, net.y + i, net.width, net.height, net.color)
     }
 }
 
@@ -59,7 +59,7 @@ drawNet =() => {
 drawCircle = (x, y, r, color) => {
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI*2, false);
+    ctx.arc(x, y, r, 0, Math.PI*2, true);
     ctx.closePath();
     ctx.fill();
 };
@@ -87,10 +87,11 @@ renderPong = () => {
     drawRect(user.x,user.y,user.width,user.height,user.color);
     drawRect(com.x,com.y,com.width,com.height,com.color);
     //Draw the ball
-    drawCircle(ball.x, ball.y, ball.r, ball.color);
+    drawCircle(ball.x, ball.y, ball.radius, ball.color);
 }   
 
-game = () => { renderPong };
+//Initialize game()
+game = () => { renderPong() };
 
 //Loop
 const framePerSecond = 50;
