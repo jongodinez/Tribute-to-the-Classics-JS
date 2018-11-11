@@ -77,13 +77,28 @@ drawText("something", 300, 200, "white");
 
 /////////////////////////////////////
 
-//function update controls position, movement and score
+//Detect ball collission
+collision =(b, p) => {
+    b.top = b.y - b.radius;
+    b.bottom = b.y + b.radius;
+    b.left = b.x - b.radius;
+    b.right = b.x + b.radius;
+
+    p.top = p.y;
+    p.bottom = p.y + p.height;
+    p.left = p.x;
+    p.right = p.x + p.width;
+
+    return b.right > p.left && b.top < p.bottom && b.left < p.right && b.bottom > p.top;
+
+}
+//update controls position, movement and score
 update =() => {
     ball.x += ball.velocityX,
     ball.y += ball.velocityY
 
-    if (ball.y + ball.r > cvs.height || ball.y - ball.r < 0){
-        ball.welocityY = -ball.velocityY;
+    if (ball.y + ball.radius > cvs.height || ball.y - ball.radius < 0){
+        ball.velocityY = -ball.velocityY;
     }
 }
 
