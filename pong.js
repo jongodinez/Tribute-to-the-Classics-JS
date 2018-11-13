@@ -146,15 +146,19 @@ update =() => {
 //Render pong.js
 renderPong = () => {
     //Clears the canvas
-    drawRect(0, 0, cvs.width, cvs.clientHeight, "black");
+    drawRect(0, 0, cvs.width, cvs.clientHeight, "navy");
+
     //Draw the net in between player windows
     drawNet();
+
     //Draw score
     drawText(user.score,cvs.width/4, cvs.height/5,"white");
     drawText(com.score,3*cvs.width/4, cvs.height/5,"white");
+
     //Draw the paddles
     drawRect(user.x,user.y,user.width,user.height,user.color);
     drawRect(com.x,com.y,com.width,com.height,com.color);
+    
     //Draw the ball
     drawCircle(ball.x, ball.y, ball.radius, ball.color);
 }   
