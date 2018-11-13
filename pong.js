@@ -63,7 +63,6 @@ drawCircle = (x, y, r, color) => {
     ctx.closePath();
     ctx.fill();
 };
-drawCircle(100, 100, 50, "white");
 
 //Draw the text
 
@@ -72,7 +71,6 @@ drawText = (text, x, y, color) => {
     ctx.font = "45px fantasy";
     ctx.fillText(text, x, y);
 };
-drawText("something", 300, 200, "white");
 
 /////////////////////////////////////
 

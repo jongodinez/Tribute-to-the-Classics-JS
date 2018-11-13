@@ -3,16 +3,32 @@
 <head>
     <meta charset="utf-8" />
     <title>Throwback to the Classics in JS</title>
-    <style href="style.css" rel="stylesheet"></style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="backgroundVideo.mp4" type="video/mp4">
-    </video>
-    <h1 id="header">Tribute to the Classics</h1>
-    <h2 id="subheader">Pong, Snake, & Tetris: in JavaScript</h2>
-    <canvas id="pong" width="600" height="400"></canvas> <!--creates initial canvas of pong game-->
-    <script src="pong.js"></script>
+    <div class="fullscreen">
+        <video autoplay muted loop poster="https://i.pinimg.com/originals/52/b2/f0/52b2f017cb70aead900d06a78e728d5e.jpg" id="myVideo">
+            <source src="backgroundVideo.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="header-overlay"></div>
+    <div class="vignette"></div>
+
+    <div class="header">
+        <h1 class="chrome">CLASSICS</h1>
+        <h3 class="dreams">in JavaScript</h3>
+    </div>
+    
+    <div class="pong-container">
+        <div class="pongGame">
+            <canvas id="pong" width="600" height="400"></canvas> <!--creates initial canvas of pong game-->
+            <script src="pong.js"></script>
+        </div>    
+    </div>
+
+
+
+
     <footer id="footer">Made with Love by Jon Godinez </footer>
 </body>
 </html>
