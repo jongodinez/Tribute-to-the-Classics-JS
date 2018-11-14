@@ -4,6 +4,11 @@
 body, html {
     overflow: hidden;
 }
+
+.footer {
+    color: white;
+}
+
 .fullscreen {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -20,14 +25,14 @@ body, html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 4px #f5f5f5;
-    font-size: 200px;
+    font-size: 150px;
     font-family: 'Titillium Web', sans-serif;
     font-style: italic;
     margin: 0;
     line-height: 1;
-  }
+}
   
-  .chrome:before {
+.chrome:before {
     content: 'CHROME';
     position: absolute;
     left: 0;
@@ -43,13 +48,13 @@ body, html {
     -webkit-animation-delay: 2s;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-  }
+}
   
-  .dreams {
+.dreams {
     position: absolute;
     margin: 0px;
     font-family: 'Mr Dafoe', cursive;
-    font-size: 160px;
+    font-size: 110px;
     color: #F975F7 ;
     transform:rotate(-15deg);
     -ms-transform:rotate(-15deg); /* IE 9 */
@@ -59,10 +64,11 @@ body, html {
     -webkit-text-stroke: 1px #f008b7;
     -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
     z-index: 20;
-  }
+}
   
-  .windows .dreams {
+.windows .dreams {
     -webkit-text-stroke: 4px #f008b7;
+}
 
 .header-overlay {
     position: absolute;
@@ -70,7 +76,7 @@ body, html {
     width: 100%;
     background: black;
     z-index: 0;
-    opacity: 0.8;
+    opacity: 0.4;
     top: 0;
     left: 0;
     bottom: 0;
@@ -83,12 +89,14 @@ body, html {
     width: 100%;
     height: 100%;
     box-shadow: 50px 50px 500px rgba(0,0,0,0.9) inset;
-    z-index: 100;
+    z-index: 50;
 }
+
 .pong-container {
     text-align: center;
     justify-content: center;
     position: relative;
+    z-index: 100;
 }
 
 .pongGame {

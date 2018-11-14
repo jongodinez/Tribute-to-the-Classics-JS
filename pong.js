@@ -116,6 +116,7 @@ update =() => {
         let rect = cvs.getBoundingClientRect();
         user.y = evt.clientY - rect.top - user.height/2;
     }
+    //add keypress for up and down arrow keys
     cvs.addEventListener("mousemove", movePaddle);
 
 
