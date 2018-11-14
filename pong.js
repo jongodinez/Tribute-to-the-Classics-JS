@@ -145,7 +145,7 @@ update =() => {
 //Render pong.js
 renderPong = () => {
     //Clears the canvas
-    drawRect(0, 0, cvs.width, cvs.clientHeight, "navy");
+    drawRect(0, 0, cvs.width, cvs.clientHeight, "black");
 
     //Draw the net in between player windows
     drawNet();
