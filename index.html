@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="fullscreen">
+    <div id="background">
         <video autoplay muted loop poster="https://i.pinimg.com/originals/52/b2/f0/52b2f017cb70aead900d06a78e728d5e.jpg" id="myVideo">
             <source src="backgroundVideo.mp4" type="video/mp4">
         </video>
+    <script>
+        document.getElementById('background').style.backgroundSize = 'cover';
+    </script>
+
     </div>
     <div class="header-overlay"></div>
     <div class="vignette"></div>
@@ -26,7 +30,13 @@
         </div>    
     </div>
 
+    <div class="instructions-container">
+        <h1>Use your mouse to control the left paddle.</h1>
+    </div>    
 
+    <div class="flexbox-container">
+
+    </div>
 
 
     <footer id="footer">Made with Love by Jon Godinez </footer>
