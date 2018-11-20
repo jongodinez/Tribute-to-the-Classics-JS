@@ -2,4 +2,4 @@
 A throwback to the classic games: Pong, Tetris, &amp; Snake written in JavaScript and HTML5
 
 ## take a look:
-![tribute to the classics.PNG](tribute to the classics.PNG)
+![tributeToTheClassics.PNG](tributeToTheClassics.PNG)
